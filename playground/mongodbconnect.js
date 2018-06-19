@@ -1,7 +1,7 @@
 // const mongoClient = require("mongodb").MongoClient
 const {MongoClient, ObjectId} = require("mongodb")
 
-mongoClient.connect("mongodb://localhost:27017/TodoApp", (error, client) =>{
+MongoClient.connect("mongodb://localhost:27017/TodoApp", (error, client) =>{
 
     if(error){
         return console.log("Unable to cmnnect to mongo");
@@ -12,7 +12,7 @@ mongoClient.connect("mongodb://localhost:27017/TodoApp", (error, client) =>{
     console.log("Connected to mongodb server...");
 
     db.collection("ToDos").insertOne({
-        "text": "Something to do",
+        "text": "Eat Lunch",
         "completed": false
     }, (error, result) => {
         if(error){
